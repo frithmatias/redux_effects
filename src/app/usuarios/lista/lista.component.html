@@ -1,0 +1,35 @@
+<!-- <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Avatar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <th scope="row">{{usuario.id}}</th>
+        <td>{{usuario.first_name}}</td>
+        <td>{{usuario.last_name}}</td>
+        <td><img [src]="usuario.avatar"></td>
+      </tr>
+    </tbody>
+  </table> -->
+
+
+
+  <div class="card-columns">
+      <div class="card" *ngFor="let usuario of usuarios">
+        <img [src]="usuario.avatar" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{usuario.first_name}} {{usuario.last_name}}</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore aspernatur fugiat eius odio dignissimos voluptatum!</p>
+          <p class="card-text">
+            <span class="text-muted">
+              ID: {{usuario.id}}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
