@@ -16,6 +16,23 @@ export class UsuarioService {
 				// voy a filtrar sólo los datos
 				.pipe(
 					map((resp) => {
+						console.log(resp['data']);
+						return resp['data']; // no puedo poner la notación resp.data, porque no estoy seguro del tipo de dato.
+					})
+				)
+		);
+	}
+
+	getUsuario(id: string) {
+		const url = 'https://reqres.in/api/users';
+		//https://reqres.in/api/users
+		return (
+			this.http
+				.get(`${url}/${id}`)
+				// voy a filtrar sólo los datos
+				.pipe(
+					map((resp) => {
+						console.log(resp['data']);
 						return resp['data']; // no puedo poner la notación resp.data, porque no estoy seguro del tipo de dato.
 					})
 				)

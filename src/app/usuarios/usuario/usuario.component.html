@@ -1,3 +1,36 @@
-<p>
-  usuario works!
-</p>
+
+<div class="container">
+  
+  <div class="row" *ngIf="loading">
+    <div class="col">
+      <div class="alert alert-info text-center">
+        <i class="fa fa-sync fa-spin fa-2x"> </i>
+          Por favor espere...
+        </div>
+      </div>
+  </div>
+
+
+  <div class="row" *ngIf="error">
+    <div class="col">
+      <div class="alert alert-danger text-center">
+        <i class="fa fa-times fa-2x"> </i>
+          <h2>Error: {{ error.status }}</h2>
+          <p>
+            {{error.message}}
+            <br>
+            {{error.url}}
+          </p>
+        </div>
+      </div>
+  </div>
+  
+  <div class="card" style="width: 18rem;" *ngIf="loaded">
+    <img [src]="usuario.avatar" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{usuario.first_name}} {{usuario.last_name}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
